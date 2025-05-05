@@ -12,7 +12,7 @@ function StageCard({
     onSelectStage
 }: StageCardProps) {
     return (
-        <button onClick={onSelectStage} className='w-full min-h-[80px] cursor-pointer rounded-lg flex flex-col py-3.5 px-5 h-fit bg-white shadow-2xl'>
+        <button onClick={onSelectStage} className='w-full min-h-[80px] cursor-pointer rounded-lg flex flex-col py-3.5 px-5 h-full bg-white shadow-2xl'>
             <div className='flex w-full gap-2 h-full items-center justify-between'>
                 <h2 className="text-start font-semibold">{name}</h2>
                 <p className={clsx(
