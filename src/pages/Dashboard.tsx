@@ -1,7 +1,5 @@
 import { useEffect } from 'react';
-import Logout from '../components/buttons/Logout';
 import RenovationCard from '../components/renovation/RenovationCard';
-import { useAuthStore } from '../stores/authStore';
 import { useRenovationStore } from '../stores/renovationStore';
 import clsx from 'clsx';
 import RenovationCardSkeleton from '../components/renovation/RenovationCardSkeleton';

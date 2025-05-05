@@ -1,5 +1,5 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react'
-import type { SafeStage, Service } from '../../types'
+import { useEffect, useMemo, useState } from 'react'
+import type { SafeStage } from '../../types'
 import { useStageStore } from '../../stores/stageStore'
 import StageCard from './StageCard'
 import clsx from 'clsx'
