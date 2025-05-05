@@ -44,11 +44,17 @@ function RenovationInfo({
                     </span>
                </li>
                <li className='flex justify-center items-center gap-2'>
-                    <img className='w-5 h-5' src={EndDateIcon} alt='EndDate'/>
-                    <span className='font-bold text-[#4c583e]'>
-                        {end_date!}
+                    <img className='w-5 h-5' src={EndDateIcon} alt='EndDate' />
+                    <span
+                        className={`font-bold ${
+                            new Date() > new Date(end_date)
+                                ? 'text-red-600'
+                                : 'text-[#4c583e]'
+                        }`}
+                    >
+                        {end_date}
                     </span>
-               </li>
+                </li>
             </ul>
         </div>
     )
