@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { axiosV1 } from '../utils/axios'; // Axios instance with withCredentials enabled
+import { axiosV1 } from '../utils/axios';
 import { persist } from 'zustand/middleware';
 import type { SafeRenovation } from '../types';
 
