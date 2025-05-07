@@ -5,6 +5,7 @@ import StageCard from './StageCard'
 import clsx from 'clsx'
 import StageCardSkeleton from './StageCardSkeleton'
 import StageModal from './StageModal'
+import { useTranslation } from 'react-i18next'
 
 interface StageFeedProps {
     serviceId: number | undefined
@@ -13,6 +14,7 @@ interface StageFeedProps {
 function StageFeed({
     serviceId
 }: StageFeedProps) {
+    const { t } = useTranslation()
     const { data, loading, fetchStages } = useStageStore()
 
     const [selectedStage, setSelectedStage] = useState<SafeStage | null>(null)
@@ -43,7 +45,7 @@ function StageFeed({
                     /> 
                 </div>
             </div>
-            <h2 className='px-6 text-[#4c583e] rounded-lg font-semibold py-2 bg-white w-fit'>Stages</h2>
+            <h2 className='px-6 text-[#4c583e] rounded-lg font-semibold py-2 bg-white w-fit'>{t("stages")}</h2>
             <div className={clsx(
                 'grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-5 w-full',
                 data?.length !== 0 ? "grid" : "flex justify-center py-5"
@@ -60,11 +62,11 @@ function StageFeed({
                     ))
                 )
                 : (
-                    <h2 className='text-xl text-[#4c583e] font-semibold'>No Such Stages</h2>
+                    <h2 className='text-xl text-[#4c583e] font-semibold'>{t("empty_stages")}</h2>
                 )
                 )}
             </div>
-            {selectedStage && <StageModal onClose={() => setSelectedStage(null)} stage={selectedStage}/>}
+            {selectedStage && <StageModal setSelectedStage={setSelectedStage} stage={selectedStage}/>}
         </div>
     )
 }

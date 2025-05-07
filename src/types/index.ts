@@ -39,5 +39,6 @@ export interface SafeStage {
 }
 
 interface Image {
+    id: number
     url: string
 }

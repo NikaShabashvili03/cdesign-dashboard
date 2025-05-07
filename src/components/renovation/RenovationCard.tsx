@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom'
 import type { SafeRenovation } from '../../types'
 import { useState } from 'react'
 import clsx from 'clsx'
+import { useTranslation } from 'react-i18next'
 
 
 function RenovationCard({
@@ -20,9 +21,10 @@ function RenovationCard({
 }: SafeRenovation) {
     const [disabledInfo, setDisabledInfo] = useState(false)
     const nav = useNavigate()
+    const { t } = useTranslation()
 
     return (
-        <div className='w-full gap-5 rounded-lg flex flex-col py-3.5 px-5 h-fit bg-white shadow-2xl'>
+        <div className='w-full gap-5 h-full rounded-lg flex flex-col justify-between py-3.5 px-5 bg-white shadow-2xl'>
             <div className='flex w-full justify-end'>
                 <p className='text-sm text-[#daded8] px-4 py-2 bg-[#4c583e] rounded-lg font-semibold'>#{track}</p>
             </div>
@@ -42,7 +44,7 @@ function RenovationCard({
                <li className='flex justify-start border-b py-1 items-center gap-2'>
                     <img className='w-5 h-5' src={ServiceIcon} alt='Location'/>
                     <span className='font-bold text-[#4c583e]'>
-                        {service?.name! || "Not Found"}
+                        {service?.name! || t("not_found")}
                     </span>
                </li>
                <li className='flex justify-start border-b py-1 items-center gap-2'>
@@ -81,7 +83,9 @@ function RenovationCard({
                         disabledInfo && !service ? 'flex items-center justify-center' : 'hidden'
                     )}
                 >
-                        Service not selected! <br/> Please Contact Admin.
+                        {t("service_not_selected")}!
+                        <br/>
+                        {t("contact_admin")}
                 </div>
 
                 <button
@@ -93,7 +97,7 @@ function RenovationCard({
                         service ? 'bg-[#4c583e] cursor-pointer' : 'bg-[#4c583ebe] cursor-not-allowed animate-pulse'
                     )}
                 >
-                    Details
+                    {t("details")}
                 </button>
             </div>
         </div>

@@ -2,6 +2,8 @@ import { create } from 'zustand';
 import { axiosV3 } from '../utils/axios'; // Axios instance with withCredentials enabled
 import { persist } from 'zustand/middleware';
 import type { SafeUser } from '../types';
+import i18n from '../i18n';
+import toast from 'react-hot-toast';
 
 
 interface AuthState {
@@ -30,7 +32,9 @@ export const useAuthStore = create<AuthState>()(
 
           await get().fetchProfile();
           set({ isAuth: true });
+          toast.success(i18n.t("success"))
         } catch (err: any) {
+          toast.error(i18n.t("something_went_wrong"))
           set({ error: err.response?.data?.detail || 'Login failed', isAuth: false });
         } finally {
           set({ loading: false });
@@ -54,8 +58,10 @@ export const useAuthStore = create<AuthState>()(
         try {
           set({ loading: true })
           await axiosV3.post('supervisor/logout');
+          toast.success(i18n.t("success"))
         } catch (err) {
           console.warn('Logout request failed');
+          toast.error(i18n.t("something_went_wrong"))
         } finally {
           set({ user: null, isAuth: false, loading: false, error: null });
         }

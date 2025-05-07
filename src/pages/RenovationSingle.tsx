@@ -5,10 +5,12 @@ import toast from "react-hot-toast"
 import Loader from "../components/Loader"
 import RenovationInfo from "../components/renovation/RenovationInfo"
 import StageFeed from "../components/stages/StageFeed"
+import { useTranslation } from "react-i18next"
 
 
 function RenovationSingle() {
     const { track } = useParams()
+    const { t, i18n } = useTranslation()
     const { singleData, loading, fetchRenovationSignle } = useRenovationStore()
     const nav = useNavigate()
     
@@ -20,8 +22,8 @@ function RenovationSingle() {
 
     useEffect(() => {
         if(singleData && !loading && !singleData?.service){
-            toast.error("This renovation doesnot has service plase contact admin.")
-            nav("/")
+            toast.error(`${t("service_not_selected")}! ${t("contact_admin")}`)
+            nav(`/${i18n}`)
         }
     }, [singleData, loading])
 
@@ -32,8 +34,8 @@ function RenovationSingle() {
     return (
         <div className="w-full flex flex-col gap-5 py-5">
             <div className="flex items-center gap-5 justify-between">
-                <Link className="px-6 py-2 font-semibold text-[#daded8] bg-[#4c583e] rounded-lg" to={'/'}>
-                    Back
+                <Link className="px-6 py-2 font-semibold text-[#daded8] bg-[#4c583e] rounded-lg" to={`/${i18n.language}`}>
+                    {t("back")}
                 </Link>
                 <div className='px-6 py-2 lg:px-10 lg:py-4 bg-[#4c583e] rounded-xl w-fit'>
                     <h2 className='lg:text-2xl text-[#daded8] font-bold'>#{track}</h2>

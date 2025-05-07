@@ -1,22 +1,28 @@
-import Dashboard from './pages/Dashboard'
-import LoginPage from './pages/LoginPage'
-import { Navigate, Route, Routes } from 'react-router-dom'
-import CustomOutlet from './components/CustomOutlet'
-import RenovationSingle from './pages/RenovationSingle'
+import { Navigate, Route, Routes } from 'react-router-dom';
+import Dashboard from './pages/Dashboard';
+import LoginPage from './pages/LoginPage';
+import CustomOutlet from './components/CustomOutlet';
+import RenovationSingle from './pages/RenovationSingle';
+import LanguageWrapper from './components/language/LanguageWrapper';
+
 
 function App() {
   return (
     <Routes>
-      <Route path="/login" element={<LoginPage />} />
+      <Route path="/" element={<Navigate to="/en" replace />} />
 
-      <Route element={<CustomOutlet/>}>
-        <Route index path={'/'} element={<Dashboard/>}/>
-        <Route path={'/renovation/:track'} element={<RenovationSingle/>}/>
+      <Route path="/:lng" element={<LanguageWrapper />}>
+        <Route path="login" element={<LoginPage />} />
+
+        <Route element={<CustomOutlet />}>
+          <Route index element={<Dashboard />} />
+          <Route path="renovation/:track" element={<RenovationSingle />} />
+        </Route>
       </Route>
-
-      <Route path="*" element={<Navigate to="/" replace />} />
+      
+      <Route path="*" element={<Navigate to="/en" replace />} />
     </Routes>
-  )
+  );
 }
 
-export default App
+export default App;

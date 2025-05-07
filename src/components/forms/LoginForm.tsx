@@ -2,6 +2,7 @@ import { useForm } from 'react-hook-form';
 import { useAuthStore } from '../../stores/authStore';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 interface LoginFormInputs {
   email: string;
@@ -9,6 +10,7 @@ interface LoginFormInputs {
 }
 
 const LoginForm = () => {
+  const { i18n, t } = useTranslation()
   const { register, handleSubmit } = useForm<LoginFormInputs>();
   const { login, loading, error, isAuth } = useAuthStore();
   const navigate = useNavigate();
@@ -19,7 +21,7 @@ const LoginForm = () => {
 
   useEffect(() => {
     if (isAuth) {
-      navigate('/');
+      navigate(`/${i18n.language}`);
     }
   }, [isAuth, navigate]);
 
@@ -29,7 +31,7 @@ const LoginForm = () => {
       {error && <p className="text-red-600">{error}</p>}
 
       <div>
-        <label className="block text-sm font-medium text-[#4c583e]">Email</label>
+        <label className="block text-sm font-medium text-[#4c583e]">{t("email")}</label>
         <input
           {...register('email', { required: true })}
           type="email"
@@ -38,7 +40,7 @@ const LoginForm = () => {
       </div>
 
       <div>
-        <label className="block text-[#4c583e] text-sm font-medium">Password</label>
+        <label className="block text-[#4c583e] text-sm font-medium">{t("password")}</label>
         <input
           {...register('password', { required: true })}
           type="password"
@@ -51,7 +53,7 @@ const LoginForm = () => {
         className="w-full bg-[#4c583e] text-white py-2 rounded hover:bg-[#4c583ec5] cursor-pointer"
         disabled={loading}
       >
-        {loading ? 'Logging in...' : 'Login'}
+        {loading ? t("logging_in") : t("login")}
       </button>
     </form>
   );
