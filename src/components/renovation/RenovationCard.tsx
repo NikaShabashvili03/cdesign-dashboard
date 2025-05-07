@@ -26,47 +26,47 @@ function RenovationCard({
     return (
         <div className='w-full gap-5 h-full rounded-lg flex flex-col justify-between py-3.5 px-5 bg-white shadow-2xl'>
             <div className='flex w-full justify-end'>
-                <p className='text-sm text-[#daded8] px-4 py-2 bg-[#4c583e] rounded-lg font-semibold'>#{track}</p>
+                <p className='text-sm text-secondary-color px-4 py-2 bg-main-color rounded-lg font-semibold'>#{track}</p>
             </div>
             <ul className='text-base flex flex-col gap-2'>
                <li className='flex justify-start border-b py-1 items-center gap-2'>
                     <img className='w-5 h-5' src={LocationIcon} alt='Location'/>
-                    <span className='font-bold text-[#4c583e]'>
+                    <span className='font-bold text-main-color'>
                         {address!}
                     </span>
                </li>
                <li className='flex justify-start border-b py-1 items-center gap-2'>
                     <img className='w-5 h-5' src={UserIcon} alt='Location'/>
-                    <span className='font-bold text-[#4c583e]'>
+                    <span className='font-bold text-main-color'>
                         {customer?.firstname!} {customer?.lastname!}
                     </span>
                </li>
                <li className='flex justify-start border-b py-1 items-center gap-2'>
                     <img className='w-5 h-5' src={ServiceIcon} alt='Location'/>
-                    <span className='font-bold text-[#4c583e]'>
+                    <span className='font-bold text-main-color'>
                         {service?.name! || t("not_found")}
                     </span>
                </li>
                <li className='flex justify-start border-b py-1 items-center gap-2'>
                     <img className='w-5 h-5' src={StartDateIcon} alt='Location'/>
-                    <span className='font-bold text-[#4c583e]'>
+                    <span className='font-bold text-main-color'>
                         {start_date!}
                     </span>
                </li>
                <li className='flex justify-start border-b py-1 items-center gap-2'>
                     <img className='w-5 h-5' src={EndDateIcon} alt='Location'/>
-                    <span className='font-bold text-[#4c583e]'>
+                    <span className='font-bold text-main-color'>
                         {end_date!}
                     </span>
                </li>
                <li className='flex justify-start flex-col items-start gap-2'>
-                    <div className='flex font-bold w-full text-[#4c583e] text-sm justify-between'>
+                    <div className='flex font-bold w-full text-main-color text-sm justify-between'>
                         <span>{progress!}%</span>
                         <span>100%</span>
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
                         <div
-                            className="bg-[#4c583e] h-full transition-all duration-300"
+                            className="bg-main-color h-full transition-all duration-300"
                             style={{ width: `${progress!}%` }}
                         /> 
                     </div>
@@ -93,8 +93,8 @@ function RenovationCard({
                     onClick={() => service && nav(`renovation/${track}`)}
                     className={clsx(
                         'px-4 py-2 font-semibold w-full text-center rounded-lg transition-all',
-                        'text-[#daded8]',
-                        service ? 'bg-[#4c583e] cursor-pointer' : 'bg-[#4c583ebe] cursor-not-allowed animate-pulse'
+                        'text-secondary-color',
+                        service ? 'bg-main-color cursor-pointer' : 'bg-main-color/70 cursor-not-allowed animate-pulse'
                     )}
                 >
                     {t("details")}

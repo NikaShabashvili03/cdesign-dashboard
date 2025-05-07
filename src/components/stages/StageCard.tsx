@@ -18,8 +18,8 @@ function StageCard({
             <div className='flex w-full gap-2 h-full items-center justify-between'>
                 <h2 className="text-start font-semibold">{name}</h2>
                 <p className={clsx(
-                    'text-sm px-4 py-2 rounded-lg font-semibold text-[#daded8]',
-                    is_completed ? "bg-[#4c583e]" : " bg-red-500"
+                    'text-sm px-4 py-2 rounded-lg font-semibold text-secondary-color',
+                    is_completed ? "bg-main-color" : " bg-red-500"
                 )}>{is_completed ? t("completed") : t("not_completed")}</p>
             </div>
         </button>

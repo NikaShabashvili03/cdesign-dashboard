@@ -73,10 +73,10 @@ function StageModal({
         )}>
             <div className='w-full sm:w-3/4 lg:w-2/4 bg-white h-fit rounded-lg px-5 py-2.5'>
                 <div className='w-full flex justify-between items-center'>
-                    <h2 className="font-semibold  text-[#4c583e] text-lg">
+                    <h2 className="font-semibold  text-main-color text-lg">
                         {stage?.name}
                     </h2>
-                    <button onClick={() => setSelectedStage(null)} className="px-4 cursor-pointer py-2 font-semibold text-[#daded8] bg-[#4c583e] rounded-lg">
+                    <button onClick={() => setSelectedStage(null)} className="px-4 cursor-pointer py-2 font-semibold text-secondary-color bg-main-color rounded-lg">
                         X
                     </button>
                 </div>
@@ -95,7 +95,7 @@ function StageModal({
                     <button
                         type="button"
                         onClick={handleClick}
-                        className="w-full text-xl border-dashed border-4 flex justify-center items-center border-[#4c583e] text-[#4c583e] focus:ring-4 focus:outline-none cursor-pointer font-medium rounded-lg px-5 py-5 text-center"
+                        className="w-full text-xl border-dashed border-4 flex justify-center items-center border-main-color text-main-color focus:ring-4 focus:outline-none cursor-pointer font-medium rounded-lg px-5 py-5 text-center"
                     >
                         <img src={ImageIcon} alt={t("choose_images")} width={50} height={50} className='w-[50px] h-[50px]'/>
                     </button>
@@ -140,14 +140,14 @@ function StageModal({
                     ))}
                 </div>
                 <div className='flex w-full justify-between items-center'>
-                    <button disabled={selectedImages.length <= 0} className="bg-[#4c583e] disabled:cursor-not-allowed  mt-10 flex disabled:bg-[#4c583ebe] justify-center items-center gap-x-2 text-white px-5 py-2.5 text-lg rounded-lg font-bold cursor-pointer" onClick={() => uploadImages()}>
+                    <button disabled={selectedImages.length <= 0} className="bg-main-color disabled:cursor-not-allowed  mt-10 flex disabled:bg-main-color/70 justify-center items-center gap-x-2 text-white px-5 py-2.5 text-lg rounded-lg font-bold cursor-pointer" onClick={() => uploadImages()}>
                         {t("upload")}
                     </button>
                     <button 
                         disabled={stage?.images?.length === 0 && !stage.is_completed}
                         className={clsx(
                             "mt-10 flex justify-center items-center disabled:cursor-not-allowed gap-x-2 disabled:opacity-50 text-white px-5 py-2.5 text-lg rounded-lg font-bold cursor-pointer",
-                            stage?.is_completed ? "bg-red-600" : "bg-[#4c583e]",
+                            stage?.is_completed ? "bg-red-600" : "bg-main-color",
                         )} onClick={onCompleteStage}>
                             {stage?.is_completed ? t("cancel_completion") : t("complete")}
                     </button>

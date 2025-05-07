@@ -15,8 +15,8 @@ const Dashboard = () => {
 
   return (
     <div className='w-full flex flex-col gap-5 py-5'>
-      <div className='px-10 py-4 bg-[#4c583e] rounded-xl w-fit'>
-        <h2 className='text-2xl text-[#daded8] font-bold'>{t("renovations")}</h2>
+      <div className='px-10 py-4 bg-main-color rounded-xl w-fit'>
+        <h2 className='text-2xl text-secondary-color font-bold'>{t("renovations")}</h2>
       </div>
       <div className={clsx(
         'grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-5 w-full',
@@ -34,7 +34,7 @@ const Dashboard = () => {
             ))
           )
           : (
-            <h2 className='text-xl text-[#4c583e] font-semibold'>{t("empty_renovations")}</h2>
+            <h2 className='text-xl text-main-color font-semibold'>{t("empty_renovations")}</h2>
           )
         )}
       </div>

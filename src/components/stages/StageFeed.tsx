@@ -33,19 +33,19 @@ function StageFeed({
 
     return (
         <div className='w-full flex flex-col gap-5 justify-center'>
-            <div className='flex border-b-2 border-[#4c583e] pb-5 justify-start w-full flex-col items-start gap-2'>
-                <div className='flex font-bold w-full text-[#4c583e] text-sm justify-between'>
+            <div className='flex border-b-2 border-main-color pb-5 justify-start w-full flex-col items-start gap-2'>
+                <div className='flex font-bold w-full text-main-color text-sm justify-between'>
                     <span>{progress}%</span>
                     <span>100%</span>
                 </div>
                 <div className="w-full bg-white rounded-full h-4 overflow-hidden">
                     <div
-                        className="bg-[#4c583e] h-full transition-all duration-300"
+                        className="bg-main-color h-full transition-all duration-300"
                         style={{ width: `${progress}%` }}
                     /> 
                 </div>
             </div>
-            <h2 className='px-6 text-[#4c583e] rounded-lg font-semibold py-2 bg-white w-fit'>{t("stages")}</h2>
+            <h2 className='px-6 text-main-color rounded-lg font-semibold py-2 bg-white w-fit'>{t("stages")}</h2>
             <div className={clsx(
                 'grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-5 w-full',
                 data?.length !== 0 ? "grid" : "flex justify-center py-5"
@@ -62,7 +62,7 @@ function StageFeed({
                     ))
                 )
                 : (
-                    <h2 className='text-xl text-[#4c583e] font-semibold'>{t("empty_stages")}</h2>
+                    <h2 className='text-xl text-main-color font-semibold'>{t("empty_stages")}</h2>
                 )
                 )}
             </div>

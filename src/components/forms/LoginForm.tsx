@@ -31,26 +31,26 @@ const LoginForm = () => {
       {error && <p className="text-red-600">{error}</p>}
 
       <div>
-        <label className="block text-sm font-medium text-[#4c583e]">{t("email")}</label>
+        <label className="block text-sm font-medium text-main-color">{t("email")}</label>
         <input
           {...register('email', { required: true })}
           type="email"
-          className="w-full text-[#4c583e] border p-2 rounded"
+          className="w-full text-main-color border p-2 rounded"
         />
       </div>
 
       <div>
-        <label className="block text-[#4c583e] text-sm font-medium">{t("password")}</label>
+        <label className="block text-main-color text-sm font-medium">{t("password")}</label>
         <input
           {...register('password', { required: true })}
           type="password"
-          className="w-full text-[#4c583e] border p-2 rounded"
+          className="w-full text-main-color border p-2 rounded"
         />
       </div>
 
       <button
         type="submit"
-        className="w-full bg-[#4c583e] text-white py-2 rounded hover:bg-[#4c583ec5] cursor-pointer"
+        className="w-full bg-main-color text-white py-2 rounded hover:bg-main-color/70 cursor-pointer"
         disabled={loading}
       >
         {loading ? t("logging_in") : t("login")}

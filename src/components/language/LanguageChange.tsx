@@ -24,8 +24,8 @@ const LanguageChange = () => {
   return (
     <>
       <button onClick={toggleLanguage} className={clsx(
-        'min-w-[60px] py-2 font-semibold cursor-pointer text-[#4c583e] bg-white',
-        isOpen ? "rounded-t-lg border-b-2 border-[#4c583e] " : "rounded-lg"
+        'min-w-[60px] py-2 font-semibold cursor-pointer text-main-color bg-white',
+        isOpen ? "rounded-t-lg border-b-2 border-main-color " : "rounded-lg"
       )}>
         {i18n.language.toUpperCase()}
       </button>   
@@ -36,7 +36,7 @@ const LanguageChange = () => {
         {supportedLanguages.map((lang, i) => {
           if(lang === i18n.language) return;
           return (
-            <button onClick={() => changeLanguage(lang)} className='text-[#4c583e] font-semibold cursor-pointer py-1 hover:bg-[#4c583e] hover:text-white w-full' key={i}>{lang.toUpperCase()}</button>
+            <button onClick={() => changeLanguage(lang)} className='text-main-color font-semibold cursor-pointer py-1 hover:bg-main-color hover:text-white w-full' key={i}>{lang.toUpperCase()}</button>
           )
         })}
       </div>

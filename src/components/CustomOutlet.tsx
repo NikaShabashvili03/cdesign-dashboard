@@ -6,7 +6,7 @@ function CustomOutlet() {
     return (
         <SafeRoute>
             <Header/>
-            <div className="min-h-[90dvh] h-fit bg-[#daded8]">
+            <div className="min-h-[90dvh] h-fit bg-secondary-color">
                 <div className="h-full px-2 lg:px-10">
                     <Outlet/>
                 </div>
