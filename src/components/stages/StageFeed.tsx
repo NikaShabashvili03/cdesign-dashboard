@@ -47,8 +47,8 @@ function StageFeed({
             </div>
             <h2 className='px-6 text-main-color rounded-lg font-semibold py-2 bg-white w-fit'>{t("stages")}</h2>
             <div className={clsx(
-                'grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-5 w-full',
-                data?.length !== 0 ? "grid" : "flex justify-center py-5"
+                'md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-5 w-full',
+                data?.length !== 0 ? "flex flex-col sm:grid" : "flex flex-col items-center justify-center py-5"
             )}>
                 {loading ? (
                     [...Array(4)].map((_, i) => (

@@ -21,5 +21,6 @@
     "password": "Password",
     "logging_in": "Logging in...",
     "success": "Success",
-    "something_went_wrong": "Something went wrong"
+    "something_went_wrong": "Something went wrong",
+    "uploaded_images": "Uploaded Images"
 }

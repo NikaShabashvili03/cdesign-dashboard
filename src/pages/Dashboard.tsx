@@ -19,8 +19,8 @@ const Dashboard = () => {
         <h2 className='text-2xl text-secondary-color font-bold'>{t("renovations")}</h2>
       </div>
       <div className={clsx(
-        'grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-5 w-full',
-        data?.length !== 0 ? "grid" : "flex justify-center py-5"
+        'sm:grid-cols-3 lg:grid-cols-5 gap-5 w-full',
+        data?.length !== 0 ? "flex sm:grid" : "flex flex-col items-center justify-center py-5"
       )}>
         {loading ? (
             [...Array(4)].map((_, i) => (

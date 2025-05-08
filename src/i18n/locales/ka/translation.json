@@ -21,5 +21,6 @@
   "password": "პაროლი",
   "logging_in": "შესვლა...",
   "success": "წარმატებით დასრულდა",
-  "something_went_wrong": "რაღაც შეცდომა მოხდა"
+  "something_went_wrong": "რაღაც შეცდომა მოხდა",
+  "uploaded_images": "ატვირთული სურათები"
 }

@@ -21,5 +21,6 @@
   "password": "Пароль",
   "logging_in": "Вход...",
   "success": "Успешно",
-  "something_went_wrong": "Что-то пошло не так"
+  "something_went_wrong": "Что-то пошло не так",
+  "uploaded_images": "Загруженные изображения"
 }
