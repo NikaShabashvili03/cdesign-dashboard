@@ -20,7 +20,7 @@ const Dashboard = () => {
       </div>
       <div className={clsx(
         'sm:grid-cols-3 lg:grid-cols-5 gap-5 w-full',
-        data?.length !== 0 ? "flex sm:grid" : "flex flex-col items-center justify-center py-5"
+        data?.length !== 0 ? "flex flex-col sm:grid" : "flex flex-col items-center justify-center py-5"
       )}>
         {loading ? (
             [...Array(4)].map((_, i) => (
