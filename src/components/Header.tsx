@@ -34,7 +34,10 @@ function Header() {
                                 <div className="px-4 py-3">         
                                     <p className="text-sm text-gray-500 leading-5">{t("signed_in_as")}</p>
                                     <p className="text-sm font-medium leading-5 text-main-color truncate">{user?.email}</p>
-                                </div>
+                                </div> 
+                                <div className="py-1">
+                                    <Link to={`/${i18n.language}/settings`} className="text-gray-700 cursor-pointer flex justify-between w-full px-4 py-2 text-sm leading-5 text-left">{t("settings")}</Link>
+                                </div> 
                                 <div className="py-1">
                                     <button onClick={logout} className="text-gray-700 cursor-pointer flex justify-between w-full px-4 py-2 text-sm leading-5 text-left"  >{t("logout")}</button>
                                 </div>

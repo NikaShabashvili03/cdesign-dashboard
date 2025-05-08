@@ -22,5 +22,22 @@
     "logging_in": "Logging in...",
     "success": "Success",
     "something_went_wrong": "Something went wrong",
-    "uploaded_images": "Uploaded Images"
+    "uploaded_images": "Uploaded Images",
+    "changePassword": {
+        "title": "Change Password",
+        "description": "Update your password associated with your account.",
+        "current": "Current Password",
+        "new": "New Password",
+        "confirm": "Confirm Password",
+        "placeholder": "Enter password",
+        "submit": "Save",
+        "errors": {
+            "currentRequired": "Current password is required",
+            "newRequired": "New password is required",
+            "newMin": "Password must be at least 8 characters long",
+            "confirmRequired": "Please confirm your password",
+            "confirmMatch": "Passwords do not match"
+        }
+    },
+    "settings": "Settings"
 }

@@ -13,6 +13,7 @@ interface AuthState {
   isAuth: boolean;
 
   login: (email: string, password: string) => Promise<void>;
+  resetPassword: ({ currentPassword, newPassword }: { currentPassword: string, newPassword: string}) => Promise<void>;
   fetchProfile: () => Promise<void>;
   logout: () => Promise<void>;
 }
@@ -39,6 +40,24 @@ export const useAuthStore = create<AuthState>()(
         } finally {
           set({ loading: false });
         }
+      },
+
+      resetPassword: async ({ currentPassword, newPassword }) => {
+        try {
+          set({ loading: true, error: null });
+          await axiosV3.post('supervisor/change-password', { 
+              prev_password: currentPassword,
+              new_password: newPassword
+          });
+
+          toast.success(i18n.t("success"))
+        } catch (err: any) {
+          toast.error(i18n.t("something_went_wrong"))
+          set({ error: err.response?.data?.detail || 'Something went wrong' });
+        } finally {
+          set({ loading: false });
+        }
+
       },
 
       fetchProfile: async () => {

@@ -4,6 +4,7 @@ import LoginPage from './pages/LoginPage';
 import CustomOutlet from './components/CustomOutlet';
 import RenovationSingle from './pages/RenovationSingle';
 import LanguageWrapper from './components/language/LanguageWrapper';
+import Settings from './pages/Settings';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
 
         <Route element={<CustomOutlet />}>
           <Route index element={<Dashboard />} />
+          <Route path='settings' element={<Settings/>}/>
           <Route path="renovation/:track" element={<RenovationSingle />} />
         </Route>
       </Route>
