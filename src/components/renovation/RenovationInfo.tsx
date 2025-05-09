@@ -54,7 +54,7 @@ function RenovationInfo({
                                 : 'text-main-color'
                         }`}
                     >
-                        {end_date}
+                        {end_date || t("not_found")}
                     </span>
                 </li>
             </ul>

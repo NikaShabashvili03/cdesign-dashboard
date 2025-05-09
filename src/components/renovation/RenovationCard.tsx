@@ -55,8 +55,14 @@ function RenovationCard({
                </li>
                <li className='flex justify-start border-b py-1 items-center gap-2'>
                     <img className='w-5 h-5' src={EndDateIcon} alt='Location'/>
-                    <span className='font-bold text-main-color'>
-                        {end_date!}
+                    <span 
+                        className={`font-bold ${
+                            new Date() > new Date(end_date)
+                                ? 'text-red-600'
+                                : 'text-main-color'
+                        }`}
+                    >
+                        {end_date! || t("not_found")}
                     </span>
                </li>
                <li className='flex justify-start flex-col items-start gap-2'>
